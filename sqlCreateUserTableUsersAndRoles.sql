@@ -6,13 +6,13 @@ alter table users_roles add constraint FKgd3iendaoyh04b95ykqise6qh foreign key (
 insert into role (name) values ("ROLE_USER");
 insert into role (name) values ("ROLE_ADMIN");
 select role0_.id as id1_0_, role0_.name as name2_0_ from role role0_ where role0_.name="ROLE_USER";
-insert into user (email, name, last_name, password) values ("user", "user", "user@gmail.com", "user");
+insert into user (email, name, last_name, password) values ("user@gmail.com", "user", "user", "user");
 insert into users_roles (user_id, role_id) values (1, 1);
 select role0_.id as id1_0_, role0_.name as name2_0_ from role role0_ where role0_.name="ROLE_ADMIN";
-insert into user (email, name, last_name, password) values ("admin", "admin", "admin@gmail.com", "admin");
+insert into user (email, name, last_name, password) values ("admin@gmail.com", "admin", "admin", "admin");
 insert into users_roles (user_id, role_id) values (2, 2);
 select role0_.id as id1_0_, role0_.name as name2_0_ from role role0_ where role0_.name="ROLE_USER";
 select role0_.id as id1_0_, role0_.name as name2_0_ from role role0_ where role0_.name="ROLE_ADMIN";
-insert into user (email, name, last_name, password) values ("both", "both", "both@gmail.com", "both");
+insert into user (email, name, last_name, password) values ("both@gmail.com", "both", "both", "both");
 insert into users_roles (user_id, role_id) values (3, 1);
 insert into users_roles (user_id, role_id) values (3, 2);
