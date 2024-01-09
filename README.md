@@ -6,7 +6,7 @@ All CRUD operations are allowed only for Users for admin role.
 
 This app does NOT have registration page, only way new users can be registered is by /admin pannel.
 
-However, that pannel was not designed to add a user with role/roles, because of that new user will be created with empty role
+However, that pannel was not designed to add a user with role, because of that new user will be created with empty role
 
 ============================
 
