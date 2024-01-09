@@ -14,6 +14,6 @@ user
 admin@gmail.com
 admin
 
-(user with User role and Admin role)
 both@gmail.com
 both
+(user with User role and Admin role)
