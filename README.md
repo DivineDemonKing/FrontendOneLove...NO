@@ -5,6 +5,7 @@ This app does NOT have registration page, only way new users can be registered i
 However, that pannel was not designed to add a user with role/roles, because of that new user will be created with empty role
 
 ============================
+
 Email(username) / Password for test
 
 user@gmail.com
