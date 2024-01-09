@@ -13,6 +13,6 @@ insert into user (email, name, last_name, password) values ("admin", "admin", "a
 insert into users_roles (user_id, role_id) values (2, 2);
 select role0_.id as id1_0_, role0_.name as name2_0_ from role role0_ where role0_.name="ROLE_USER";
 select role0_.id as id1_0_, role0_.name as name2_0_ from role role0_ where role0_.name="ROLE_ADMIN";
-insert into user (email, name, last_name, password) values ("both", "both", "both@gmail.com", "both@gmail.com");
+insert into user (email, name, last_name, password) values ("both", "both", "both@gmail.com", "both");
 insert into users_roles (user_id, role_id) values (3, 1);
 insert into users_roles (user_id, role_id) values (3, 2);
