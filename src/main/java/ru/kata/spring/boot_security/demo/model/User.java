@@ -10,6 +10,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.*;
 
 @Entity
@@ -20,12 +22,14 @@ public class User implements UserDetails {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
+   @NotBlank
    @Column(name = "name")
    private String firstName;
 
    @Column(name = "last_name")
    private String lastName;
 
+   @Email
    @Column(name = "email")
    private String email;
    @Column(name = "password")
