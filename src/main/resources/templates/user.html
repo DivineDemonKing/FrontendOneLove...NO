@@ -2,12 +2,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>Spring Security Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>User, welcome spring boot security page!</h1>
 
-<div>
-    <table border="1">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link disabled" th:utext="${user.email}"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" type="button">with roles:<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" th:utext="${user.roles}"><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+    <a class="navbar-brand mb-sm-auto" type="button" href="/logout">Logout</a>
+</nav>
+
+<div class="row">
+    <div class="btn-group-vertical col-2" style="height: 10vh;">
+        <a type="button" class="btn btn-link" th:href ="@{/admin}">Admin</a>
+        <a type="button" class="btn btn-primary text-light">User</a>
+    </div>
+
+    <div class="col-10 text-dark mh-100 bg-light" style="height: 100vh;">
+        <h1>User information-page</h1>
+
+        <h2>About user</h2>
+    <table class="table table-striped" >
         <tr>
             <th>Email</th>
             <th>First name</th>
@@ -20,6 +46,6 @@
         </tr>
     </table>
 </div>
-<a href="/logout">Logout</a>
+</div>
 </body>
 </html>

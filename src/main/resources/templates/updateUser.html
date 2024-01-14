@@ -4,25 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 <form th:action="@{/updateUser}"
-      th:object="${user}" method="POST">
-    Id User to update:
-    <input type="text" th:field="*{id}" />
-    <br/>
-    New values
-    <br/>
-    First name:
-    <input type="text" th:field="*{firstName}" />
-    <br/>
-    Last name:
-    <input type="text" th:field="*{lastName}" />
-    <br/>
-    Email:
-    <input type="text" th:field="*{email}" />
-    <br/>
-    <input type="submit" value="Update" />
+      th:object="${user}" method="POST" class="text-center">
+    <br><br><br>
+    <div class="text-center justify-content-center align-self-center">
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <label for="exampleInputEmail1">id for user to update:</label>
+                <input type="text" th:field="*{id}" class="form-control" placeholder="id for user to update">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    New Data
+    <br>
+    <br>
+
+    <div class="text-center justify-content-center align-self-center">
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <label for="exampleInputEmail1">First name:</label>
+                <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter last name">
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center justify-content-center align-self-center">
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Last name:</label>
+                <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter last name">
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center justify-content-center align-self-center">
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address:</label>
+                <input type="email" th:field="*{email}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+        </div>
+        <input type="submit" value="Update" />
+    </div>
 </form>
 </body>
 </html>

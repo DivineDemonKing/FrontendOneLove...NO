@@ -1,30 +1,57 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Admin pannel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
-<div>
-    <table border="1">
-        <tr>
-            <th>Id</th>
-            <th>Email</th>
-            <th>First name</th>
-            <th>Last name</th>
-        </tr>
-        <tr th:each = "user : ${users}">
-            <td th:utext="${user.id}"></td>
-            <td th:utext="${user.email}"></td>
-            <td th:utext="${user.firstName}"></td>
-            <td th:utext="${user.lastName}"></td>
-        </tr>
-    </table>
-    <a th:href ="@{/addUser}">Add User</a>
-    <a th:href ="@{/deleteUser}">Delete User</a>
-    <a th:href ="@{/updateUser}">Update User</a>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link disabled" th:utext="${user.email}"><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" type="button">with roles:<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link disabled" th:utext="${user.roles}"><span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+    <a class="navbar-brand mb-sm-auto" type="button" href="/logout">Logout</a>
+</nav>
+<div class="row">
+    <div class="btn-group-vertical col-2" style="height: 10vh;">
+    <a type="button" class="btn btn-primary text-light">Admin</a>
+    <a type="button" class="btn btn-link" th:href ="@{/user}">User</a>
+    </div>
+
+    <div class="col-10 text-dark mh-100 bg-light" style="height: 100vh;">
+        <h1>Admin panel</h1>
+        <a type="button" class="btn btn-link" th:href ="@{/addUser}">Add User</a>
+        <a type="button" class="btn btn-outline-danger" th:href ="@{/deleteUser}">Delete User</a>
+        <a type="button" class="btn btn-outline-primary" th:href ="@{/updateUser}">Update User</a>
+        <h2>All users</h2>
+        <table class="table table-striped">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Email</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+            </tr>
+            <tr th:each = "user : ${users}">
+                <td th:utext="${user.id}"></td>
+                <td th:utext="${user.email}"></td>
+                <td th:utext="${user.firstName}"></td>
+                <td th:utext="${user.lastName}"></td>
+            </tr>
+        </table>
+    </div>
 </div>
-<a href="/logout">Logout</a>
+
 </body>
 </html>
