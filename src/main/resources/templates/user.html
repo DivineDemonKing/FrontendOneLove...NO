@@ -26,7 +26,6 @@
 
 <div class="row justify-content-end">
 
-
     <div class="gap-2 col-2">
         <div sec:authorize="hasRole('ROLE_ADMIN')">
             <a type="button" class="btn btn-link w-100" th:href ="@{/admin}">Admin</a>
@@ -36,20 +35,19 @@
 
     <div class="col-10 text-dark mh-100 bg-light" style="height: 100vh;">
         <h1>User information-page</h1>
-
         <h2>About user</h2>
-    <table class="table table-striped" >
-        <tr>
-            <th>Email</th>
-            <th>First name</th>
-            <th>Last name</th>
-        </tr>
-        <tr>
-            <td th:utext="${user.email}"></td>
-            <td th:utext="${user.firstName}"></td>
-            <td th:utext="${user.lastName}"></td>
-        </tr>
-    </table>
+        <table class="table table-striped" >
+            <tr>
+                <th>Email</th>
+                <th>First name</th>
+                <th>Last name</th>
+            </tr>
+            <tr>
+                <td th:utext="${user.email}"></td>
+                <td th:utext="${user.firstName}"></td>
+                <td th:utext="${user.lastName}"></td>
+            </tr>
+        </table>
     </div>
 </div>
 </body>
