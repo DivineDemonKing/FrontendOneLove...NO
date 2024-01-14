@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
     <meta charset="UTF-8">
     <title>Admin pannel</title>
@@ -7,7 +8,6 @@
 
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -24,12 +24,12 @@
     </div>
     <a class="navbar-brand mb-sm-auto" type="button" href="/logout">Logout</a>
 </nav>
-<div class="row">
-    <div class="btn-group-vertical col-2" style="height: 10vh;">
-    <a type="button" class="btn btn-primary text-light">Admin</a>
-    <a type="button" class="btn btn-link" th:href ="@{/user}">User</a>
-    </div>
 
+<div class="row">
+    <div class="gap-2 col-2">
+            <a type="button" class="btn btn-primary text-light w-100">Admin</a>
+            <a type="button" class="btn btn-link w-100" th:href ="@{/user}">User</a>
+    </div>
     <div class="col-10 text-dark mh-100 bg-light" style="height: 100vh;">
         <h1>Admin panel</h1>
         <a type="button" class="btn btn-link" th:href ="@{/addUser}">Add User</a>
@@ -51,7 +51,5 @@
             </tr>
         </table>
     </div>
-</div>
-
 </body>
 </html>
